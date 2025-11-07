@@ -14,3 +14,18 @@ class AccessRecordDjForm(forms.Form):
     name=forms.ModelChoiceField(queryset=WebPage.objects.all())
     author=forms.CharField()
     date=forms.DateField()
+    
+class TopicMF(forms.ModelForm):
+    class Meta:
+        model=Topic
+        fields='__all__'
+    
+class WebPageMF(forms.ModelForm):
+    class Meta:
+        model=WebPage
+        fields='__all__'
+        
+class AccessRecordMF(forms.ModelForm):
+    class Meta:
+        model=AccessRecord
+        fields='__all__'

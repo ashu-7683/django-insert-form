@@ -50,3 +50,37 @@ def insert_accessrecord(request):
             else:
                 return HttpResponse('AccessRecord already exists')
     return render(request,'insert_accessrecord.html',d)
+
+
+def insert_topic_mf(request):
+    ETMFO=TopicMF()
+    d={'ETMFO':ETMFO}
+    if request.method=='POST':
+        TMFDO=TopicMF(request.POST)
+        if TMFDO.is_valid():
+            TMFDO.save()
+            return HttpResponse('Topic inserted successfully using ModelForm')
+        return HttpResponse('Invalid data')
+    return render(request,'insert_topic_mf.html',d)
+
+def insert_webpage_mf(request):
+    EWMFO=WebPageMF()
+    d={'EWMFO':EWMFO}
+    if request.method=='POST':
+        WMFDO=WebPageMF(request.POST)
+        if WMFDO.is_valid():
+            WMFDO.save()
+            return HttpResponse('Webpage inserted successfully using ModelForm')
+        return HttpResponse('Invalid data')
+    return render(request,'insert_webpage_mf.html',d)
+
+def insert_accessrecord_mf(request):
+    EAMFO=AccessRecordMF()
+    d={'EAMFO':EAMFO}
+    if request.method=='POST':
+        AMFDO=AccessRecordMF(request.POST)
+        if AMFDO.is_valid():
+            AMFDO.save()
+            return HttpResponse('AccessRecord inserted successfully using ModelForm')
+        return HttpResponse('Invalid data')
+    return render(request,'insert_accessrecord_mf.html',d)
