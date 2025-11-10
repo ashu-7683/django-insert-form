@@ -8,14 +8,11 @@
 <body>
     <center>
         <h1>Insert Webpage By MF</h1>
-    <form method='POST'>
-
-        {% csrf_token %}
-
-        {{ EWMFO.as_p}}
+        <form method='POST'>
+            {% csrf_token %}
+            {{ EWMFO.as_p}}
         <input type="submit" value="Insert Webpage By MF">
-
-    </form>
+        </form>
     </center>
 </body>
 </html>
